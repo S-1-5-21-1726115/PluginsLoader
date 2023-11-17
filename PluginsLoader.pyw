@@ -14,6 +14,8 @@ def StartUpDisk(Disk):
     else:
         return False
 
+
+NotFound=True
 for i in ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]:
     disk=StartUpDisk(i)
     if disk:
@@ -30,6 +32,7 @@ for i in ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R
                         os.system("7z.exe x {}:\Plugins\{} -oX:\Program Files\Plugins\{}".format(i,j,j.rstrip(".7z")))
                         os.system("X:\Program Files\Plugins\{}\Install.bat".format(j.rstrip(".7z")))
                         messagebox.showinfo("信息","已加载插件：{}".format(j.rstrip(".7z")))
+    NotFound=False
     else:
-        if i=="Z":
+        if i=="Z" and NotFound:
             messagebox.showinfo("信息","没有发现合法启动盘，请重新创建")
