@@ -24,7 +24,7 @@ for i in ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R
     if disk:
         if not os.path.exists(f"{i}:\Plugins"):
             os.mkdir(f"{i}:\Plugins")
-            messagebox.showinfo("信息","已创建存放插件的目录，请重启")
+            messagebox.showinfo("信息","已创建存放插件的目录，请注销后重新登录")
         else:
             plugin=os.listdir(f"{i}:\Plugins")
             if plugin==[]:
